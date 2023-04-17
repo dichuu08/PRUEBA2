@@ -1,12 +1,35 @@
-/*Identificar la clasificación de un ángulo según su medida. Un ángulo puede ser: agudo si
-mide mas de 0° y menos de 90°; recto si mide 90°; obtuso si mide más de 90° y menos de
-180° y extendido si mide 180°*/
+#include <iostream>
+#include <string>
+#include <cmath>
 
-#include<iostream>
-#include<string>
 using namespace std;
 
-float angulo;
-string clasifAngulo(float angulo);
+string clasifAngulo(double angulo) {
+    if (angulo > 0 && angulo < 90) {
+        return "agudo";
+    } else if (angulo == 90) {
+        return "recto";
+    } else if (angulo > 90 && angulo < 180) {
+        return "obtuso";
+    } else if (angulo == 180) {
+        return "extendido";
+    } else {
+        return "angulo invalido";
+    }
+}
+
+string clasifTriangulo(double a, double b, double c) {
+    if (a == b && b == c) {
+        return "Equilatero";
+    } else if (a == b || a == c || b == c) {
+        return "isosceles";
+    } else {
+        return "escaleno";
+    }
+}
+
+double calcAreaRectangulo(double largo, double ancho) {
+    return largo * ancho;
+}
 
 
